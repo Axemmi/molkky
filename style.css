@@ -1,0 +1,23 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.team-container {
+    display: flex;
+}
+.team {
+    margin: 50px;
+}
+.team-score {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.team-error {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
