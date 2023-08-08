@@ -83,8 +83,8 @@ function initTeam(){
 
 function init (){
     nbTeam = parseInt(document.querySelector("#team-nb-input").value);
-    
+    if(nbTeam > 0){
     document.querySelector(".main").replaceChildren(initTeam());
-    
+    }
 }
 document.querySelector("#team-nb-button").addEventListener("click", init)
