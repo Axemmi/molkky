@@ -46,6 +46,7 @@ function initTeam(){
         //score handler
         scoreButton.addEventListener("click", () => {
             teams[i].score += 1;
+            teams[i].error = 0;
             document.querySelector(`#team-score-${i + 1}`).innerText = teams[i].score;
         })
         scoreSlot.append(scoreButton);
@@ -59,17 +60,25 @@ function initTeam(){
         error.id = `team-error-${i + 1}`;
         error.innerText = 0;
         errorSlot.append(error);
+
         //error button
         const errorButton = document.createElement("button");
         errorButton.className = `error-button`;
         errorButton.innerText = "Erreur";
+        
+        // score handler
         errorButton.addEventListener("click", () => {
             teams[i].error += 1;
             
             if (teams[i].error === 3){
                 teams[i].error = 0;
-                teams[i].score = 0;
-                document.querySelector(`#team-score-${i + 1}`).innerText = 0;
+                if(teams[i].score < 25){
+                    teams[i].score = 0;
+                    document.querySelector(`#team-score-${i + 1}`).innerText = 0;
+                } else {
+                    teams[i].score = 25;
+                    document.querySelector(`#team-score-${i + 1}`).innerText = 25;
+                }
             }
             document.querySelector(`#team-error-${i + 1}`).innerText = teams[i].error;
         })
