@@ -49,6 +49,10 @@ function initTeam(){
             teams[i].error = 0;
             document.querySelector(`#team-score-${i + 1}`).innerText = teams[i].score;
             document.querySelector(`#team-error-${i + 1}`).innerText = teams[i].error;
+            if (teams[i].score === 50){
+                result.innerHTML = `VICTOIRE : L'équipe ${i+1} est décidemment meilleure que toutes les autres`;
+                result.className = `win`
+            }
 
         })
         scoreSlot.append(scoreButton);
@@ -68,7 +72,7 @@ function initTeam(){
         errorButton.className = `error-button`;
         errorButton.innerText = "Erreur";
         
-        // score handler
+        //error handler
         errorButton.addEventListener("click", () => {
             teams[i].error += 1;
             

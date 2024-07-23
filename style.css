@@ -6,6 +6,7 @@ body {
 }
 .team-container {
     display: flex;
+    flex-wrap: wrap;
 }
 .team {
     margin: 50px;
@@ -16,6 +17,10 @@ body {
     align-items: center;
 }
 
+.win {
+    color : green;
+    size: 50px;
+}
 
 .team-error {
     display: flex;
