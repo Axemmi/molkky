@@ -48,6 +48,8 @@ function initTeam(){
             teams[i].score += 1;
             teams[i].error = 0;
             document.querySelector(`#team-score-${i + 1}`).innerText = teams[i].score;
+            document.querySelector(`#team-error-${i + 1}`).innerText = teams[i].error;
+
         })
         scoreSlot.append(scoreButton);
         team.append(scoreSlot);
@@ -80,10 +82,12 @@ function initTeam(){
                     document.querySelector(`#team-score-${i + 1}`).innerText = 25;
                 }
             }
+            document.querySelector(`#team-error-${i + 1}`).innerText = teams[i].score;
             document.querySelector(`#team-error-${i + 1}`).innerText = teams[i].error;
         })
         errorSlot.append(errorButton);
         team.append(errorSlot);
+
         //add the team to the container
         result.append(team)
     }
